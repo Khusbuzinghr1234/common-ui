@@ -10,7 +10,6 @@ pnpm-debug.log*
 # ----------------------------
 # Build Output
 # ----------------------------
-dist/
 build/
 lib/
 
