@@ -2,21 +2,21 @@
   "name": "common-ui",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
   },
   "devDependencies": {
-    "@types/react": "^19.2.14",
-    "@types/react-native": "^0.72.8",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-native": "^0.72.0"
   }
 }
