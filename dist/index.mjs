@@ -7307,7 +7307,8 @@ export {
   AppProvider,
   Button2 as Button,
   Card,
-  TextField
+  TextField,
+  tamagui_config_default as tamaguiConfig
 };
 /*! Bundled license information:
 

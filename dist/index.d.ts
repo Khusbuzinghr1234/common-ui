@@ -932,4 +932,4 @@ declare const Card: ({ children }: {
     children: React.ReactNode;
 }) => react_jsx_runtime.JSX.Element;
 
-export { AppProvider, Button, Card, TextField };
+export { AppProvider, Button, Card, TextField, tamaguiConfig };

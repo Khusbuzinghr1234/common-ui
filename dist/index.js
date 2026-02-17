@@ -515,7 +515,8 @@ __export(index_exports, {
   AppProvider: () => AppProvider,
   Button: () => Button2,
   Card: () => Card,
-  TextField: () => TextField
+  TextField: () => TextField,
+  tamaguiConfig: () => tamagui_config_default
 });
 module.exports = __toCommonJS(index_exports);
 
@@ -7313,7 +7314,8 @@ var Card = ({ children }) => {
   AppProvider,
   Button,
   Card,
-  TextField
+  TextField,
+  tamaguiConfig
 });
 /*! Bundled license information:
 
