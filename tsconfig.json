@@ -1,29 +1,15 @@
 {
   "compilerOptions": {
-    /* React JSX */
     "jsx": "react-jsx",
-
-    /* Tell TS we support RN + Web */
-    "types": ["react", "react-native"],
-
-    /* IMPORTANT: Enables platform file resolution */
+    "types": ["react", "react-native", "tamagui"],
     "moduleResolution": "bundler",
     "moduleSuffixes": [".native", ".web", ""],
-
-    /* Build settings for library */
     "target": "ES2019",
     "module": "ESNext",
     "declaration": true,
     "outDir": "dist",
-
-    /* Interop */
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-
-    /* Quality */
     "strict": true,
     "skipLibCheck": true
   },
-
-  "include": ["src"]
+  "include": ["src", "src/**/*.d.ts"]
 }

@@ -1,151 +1,935 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { ReactNode } from 'react';
+import React$1 from 'react';
+import * as _tamagui_web from '@tamagui/web';
+import * as _tamagui_themes_v3_themes from '@tamagui/themes/v3-themes';
+import * as tamagui from 'tamagui';
 
-interface ButtonProps {
-    children: ReactNode;
-    onPress: () => void;
-    disabled?: boolean;
-}
-
-declare const Button: ({ children, onPress, disabled }: ButtonProps) => react_jsx_runtime.JSX.Element;
-
-type TextFieldProps = {
-    label?: string;
-    value?: string;
-    placeholder?: string;
-    onChange?: (text: string) => void;
-};
-
-declare const TextField: ({ label, value, onChange, placeholder }: TextFieldProps) => react_jsx_runtime.JSX.Element;
-
-type AccordionProps = {
-    title: string;
-    children: React.ReactNode;
-};
-
-declare const Accordion: ({ title, children }: AccordionProps) => react_jsx_runtime.JSX.Element;
-
-/**
- * Cross-platform Design Tokens
- * Works for React (Web) + React Native (Expo)
- * Do NOT put component styles here — only design decisions.
- */
-declare const theme: {
-    /**
-     * COLOR SYSTEM
-     * Use semantic names instead of raw colors in components.
-     */
-    colors: {
-        brand: string;
-        background: string;
-        surface: string;
-        text: {
-            primary: string;
-            secondary: string;
-            inverse: string;
-        };
-        border: string;
-        states: {
-            success: string;
-            error: string;
-            warning: string;
-            disabled: string;
-        };
+declare const tamaguiConfig: tamagui.TamaguiInternalConfig<{
+    color: {
+        yellow1Dark: tamagui.Variable<string>;
+        yellow2Dark: tamagui.Variable<string>;
+        yellow3Dark: tamagui.Variable<string>;
+        yellow4Dark: tamagui.Variable<string>;
+        yellow5Dark: tamagui.Variable<string>;
+        yellow6Dark: tamagui.Variable<string>;
+        yellow7Dark: tamagui.Variable<string>;
+        yellow8Dark: tamagui.Variable<string>;
+        yellow9Dark: tamagui.Variable<string>;
+        yellow10Dark: tamagui.Variable<string>;
+        yellow11Dark: tamagui.Variable<string>;
+        yellow12Dark: tamagui.Variable<string>;
+        red1Dark: tamagui.Variable<string>;
+        red2Dark: tamagui.Variable<string>;
+        red3Dark: tamagui.Variable<string>;
+        red4Dark: tamagui.Variable<string>;
+        red5Dark: tamagui.Variable<string>;
+        red6Dark: tamagui.Variable<string>;
+        red7Dark: tamagui.Variable<string>;
+        red8Dark: tamagui.Variable<string>;
+        red9Dark: tamagui.Variable<string>;
+        red10Dark: tamagui.Variable<string>;
+        red11Dark: tamagui.Variable<string>;
+        red12Dark: tamagui.Variable<string>;
+        purple1Dark: tamagui.Variable<string>;
+        purple2Dark: tamagui.Variable<string>;
+        purple3Dark: tamagui.Variable<string>;
+        purple4Dark: tamagui.Variable<string>;
+        purple5Dark: tamagui.Variable<string>;
+        purple6Dark: tamagui.Variable<string>;
+        purple7Dark: tamagui.Variable<string>;
+        purple8Dark: tamagui.Variable<string>;
+        purple9Dark: tamagui.Variable<string>;
+        purple10Dark: tamagui.Variable<string>;
+        purple11Dark: tamagui.Variable<string>;
+        purple12Dark: tamagui.Variable<string>;
+        pink1Dark: tamagui.Variable<string>;
+        pink2Dark: tamagui.Variable<string>;
+        pink3Dark: tamagui.Variable<string>;
+        pink4Dark: tamagui.Variable<string>;
+        pink5Dark: tamagui.Variable<string>;
+        pink6Dark: tamagui.Variable<string>;
+        pink7Dark: tamagui.Variable<string>;
+        pink8Dark: tamagui.Variable<string>;
+        pink9Dark: tamagui.Variable<string>;
+        pink10Dark: tamagui.Variable<string>;
+        pink11Dark: tamagui.Variable<string>;
+        pink12Dark: tamagui.Variable<string>;
+        orange1Dark: tamagui.Variable<string>;
+        orange2Dark: tamagui.Variable<string>;
+        orange3Dark: tamagui.Variable<string>;
+        orange4Dark: tamagui.Variable<string>;
+        orange5Dark: tamagui.Variable<string>;
+        orange6Dark: tamagui.Variable<string>;
+        orange7Dark: tamagui.Variable<string>;
+        orange8Dark: tamagui.Variable<string>;
+        orange9Dark: tamagui.Variable<string>;
+        orange10Dark: tamagui.Variable<string>;
+        orange11Dark: tamagui.Variable<string>;
+        orange12Dark: tamagui.Variable<string>;
+        green1Dark: tamagui.Variable<string>;
+        green2Dark: tamagui.Variable<string>;
+        green3Dark: tamagui.Variable<string>;
+        green4Dark: tamagui.Variable<string>;
+        green5Dark: tamagui.Variable<string>;
+        green6Dark: tamagui.Variable<string>;
+        green7Dark: tamagui.Variable<string>;
+        green8Dark: tamagui.Variable<string>;
+        green9Dark: tamagui.Variable<string>;
+        green10Dark: tamagui.Variable<string>;
+        green11Dark: tamagui.Variable<string>;
+        green12Dark: tamagui.Variable<string>;
+        gray1Dark: tamagui.Variable<string>;
+        gray2Dark: tamagui.Variable<string>;
+        gray3Dark: tamagui.Variable<string>;
+        gray4Dark: tamagui.Variable<string>;
+        gray5Dark: tamagui.Variable<string>;
+        gray6Dark: tamagui.Variable<string>;
+        gray7Dark: tamagui.Variable<string>;
+        gray8Dark: tamagui.Variable<string>;
+        gray9Dark: tamagui.Variable<string>;
+        gray10Dark: tamagui.Variable<string>;
+        gray11Dark: tamagui.Variable<string>;
+        gray12Dark: tamagui.Variable<string>;
+        blue1Dark: tamagui.Variable<string>;
+        blue2Dark: tamagui.Variable<string>;
+        blue3Dark: tamagui.Variable<string>;
+        blue4Dark: tamagui.Variable<string>;
+        blue5Dark: tamagui.Variable<string>;
+        blue6Dark: tamagui.Variable<string>;
+        blue7Dark: tamagui.Variable<string>;
+        blue8Dark: tamagui.Variable<string>;
+        blue9Dark: tamagui.Variable<string>;
+        blue10Dark: tamagui.Variable<string>;
+        blue11Dark: tamagui.Variable<string>;
+        blue12Dark: tamagui.Variable<string>;
+        yellow1Light: tamagui.Variable<string>;
+        yellow2Light: tamagui.Variable<string>;
+        yellow3Light: tamagui.Variable<string>;
+        yellow4Light: tamagui.Variable<string>;
+        yellow5Light: tamagui.Variable<string>;
+        yellow6Light: tamagui.Variable<string>;
+        yellow7Light: tamagui.Variable<string>;
+        yellow8Light: tamagui.Variable<string>;
+        yellow9Light: tamagui.Variable<string>;
+        yellow10Light: tamagui.Variable<string>;
+        yellow11Light: tamagui.Variable<string>;
+        yellow12Light: tamagui.Variable<string>;
+        red1Light: tamagui.Variable<string>;
+        red2Light: tamagui.Variable<string>;
+        red3Light: tamagui.Variable<string>;
+        red4Light: tamagui.Variable<string>;
+        red5Light: tamagui.Variable<string>;
+        red6Light: tamagui.Variable<string>;
+        red7Light: tamagui.Variable<string>;
+        red8Light: tamagui.Variable<string>;
+        red9Light: tamagui.Variable<string>;
+        red10Light: tamagui.Variable<string>;
+        red11Light: tamagui.Variable<string>;
+        red12Light: tamagui.Variable<string>;
+        purple1Light: tamagui.Variable<string>;
+        purple2Light: tamagui.Variable<string>;
+        purple3Light: tamagui.Variable<string>;
+        purple4Light: tamagui.Variable<string>;
+        purple5Light: tamagui.Variable<string>;
+        purple6Light: tamagui.Variable<string>;
+        purple7Light: tamagui.Variable<string>;
+        purple8Light: tamagui.Variable<string>;
+        purple9Light: tamagui.Variable<string>;
+        purple10Light: tamagui.Variable<string>;
+        purple11Light: tamagui.Variable<string>;
+        purple12Light: tamagui.Variable<string>;
+        pink1Light: tamagui.Variable<string>;
+        pink2Light: tamagui.Variable<string>;
+        pink3Light: tamagui.Variable<string>;
+        pink4Light: tamagui.Variable<string>;
+        pink5Light: tamagui.Variable<string>;
+        pink6Light: tamagui.Variable<string>;
+        pink7Light: tamagui.Variable<string>;
+        pink8Light: tamagui.Variable<string>;
+        pink9Light: tamagui.Variable<string>;
+        pink10Light: tamagui.Variable<string>;
+        pink11Light: tamagui.Variable<string>;
+        pink12Light: tamagui.Variable<string>;
+        orange1Light: tamagui.Variable<string>;
+        orange2Light: tamagui.Variable<string>;
+        orange3Light: tamagui.Variable<string>;
+        orange4Light: tamagui.Variable<string>;
+        orange5Light: tamagui.Variable<string>;
+        orange6Light: tamagui.Variable<string>;
+        orange7Light: tamagui.Variable<string>;
+        orange8Light: tamagui.Variable<string>;
+        orange9Light: tamagui.Variable<string>;
+        orange10Light: tamagui.Variable<string>;
+        orange11Light: tamagui.Variable<string>;
+        orange12Light: tamagui.Variable<string>;
+        green1Light: tamagui.Variable<string>;
+        green2Light: tamagui.Variable<string>;
+        green3Light: tamagui.Variable<string>;
+        green4Light: tamagui.Variable<string>;
+        green5Light: tamagui.Variable<string>;
+        green6Light: tamagui.Variable<string>;
+        green7Light: tamagui.Variable<string>;
+        green8Light: tamagui.Variable<string>;
+        green9Light: tamagui.Variable<string>;
+        green10Light: tamagui.Variable<string>;
+        green11Light: tamagui.Variable<string>;
+        green12Light: tamagui.Variable<string>;
+        gray1Light: tamagui.Variable<string>;
+        gray2Light: tamagui.Variable<string>;
+        gray3Light: tamagui.Variable<string>;
+        gray4Light: tamagui.Variable<string>;
+        gray5Light: tamagui.Variable<string>;
+        gray6Light: tamagui.Variable<string>;
+        gray7Light: tamagui.Variable<string>;
+        gray8Light: tamagui.Variable<string>;
+        gray9Light: tamagui.Variable<string>;
+        gray10Light: tamagui.Variable<string>;
+        gray11Light: tamagui.Variable<string>;
+        gray12Light: tamagui.Variable<string>;
+        blue1Light: tamagui.Variable<string>;
+        blue2Light: tamagui.Variable<string>;
+        blue3Light: tamagui.Variable<string>;
+        blue4Light: tamagui.Variable<string>;
+        blue5Light: tamagui.Variable<string>;
+        blue6Light: tamagui.Variable<string>;
+        blue7Light: tamagui.Variable<string>;
+        blue8Light: tamagui.Variable<string>;
+        blue9Light: tamagui.Variable<string>;
+        blue10Light: tamagui.Variable<string>;
+        blue11Light: tamagui.Variable<string>;
+        blue12Light: tamagui.Variable<string>;
+        white0: tamagui.Variable<string>;
+        white075: tamagui.Variable<string>;
+        white05: tamagui.Variable<string>;
+        white025: tamagui.Variable<string>;
+        black0: tamagui.Variable<string>;
+        black075: tamagui.Variable<string>;
+        black05: tamagui.Variable<string>;
+        black025: tamagui.Variable<string>;
+        white1: tamagui.Variable<string>;
+        white2: tamagui.Variable<string>;
+        white3: tamagui.Variable<string>;
+        white4: tamagui.Variable<string>;
+        white5: tamagui.Variable<string>;
+        white6: tamagui.Variable<string>;
+        white7: tamagui.Variable<string>;
+        white8: tamagui.Variable<string>;
+        white9: tamagui.Variable<string>;
+        white10: tamagui.Variable<string>;
+        white11: tamagui.Variable<string>;
+        white12: tamagui.Variable<string>;
+        black1: tamagui.Variable<string>;
+        black2: tamagui.Variable<string>;
+        black3: tamagui.Variable<string>;
+        black4: tamagui.Variable<string>;
+        black5: tamagui.Variable<string>;
+        black6: tamagui.Variable<string>;
+        black7: tamagui.Variable<string>;
+        black8: tamagui.Variable<string>;
+        black9: tamagui.Variable<string>;
+        black10: tamagui.Variable<string>;
+        black11: tamagui.Variable<string>;
+        black12: tamagui.Variable<string>;
     };
-    /**
-     * SPACING SCALE (8pt grid system)
-     * Never use random numbers like padding: 13
-     */
-    spacing: {
-        xs: number;
-        sm: number;
-        md: number;
-        lg: number;
-        xl: number;
-        xxl: number;
+    space: {
+        0: tamagui.Variable<number>;
+        0.25: tamagui.Variable<number>;
+        0.5: tamagui.Variable<number>;
+        0.75: tamagui.Variable<number>;
+        1: tamagui.Variable<number>;
+        1.5: tamagui.Variable<number>;
+        2: tamagui.Variable<number>;
+        2.5: tamagui.Variable<number>;
+        3: tamagui.Variable<number>;
+        3.5: tamagui.Variable<number>;
+        4: tamagui.Variable<number>;
+        true: tamagui.Variable<number>;
+        4.5: tamagui.Variable<number>;
+        5: tamagui.Variable<number>;
+        6: tamagui.Variable<number>;
+        7: tamagui.Variable<number>;
+        8: tamagui.Variable<number>;
+        9: tamagui.Variable<number>;
+        10: tamagui.Variable<number>;
+        11: tamagui.Variable<number>;
+        12: tamagui.Variable<number>;
+        13: tamagui.Variable<number>;
+        14: tamagui.Variable<number>;
+        15: tamagui.Variable<number>;
+        16: tamagui.Variable<number>;
+        17: tamagui.Variable<number>;
+        18: tamagui.Variable<number>;
+        19: tamagui.Variable<number>;
+        20: tamagui.Variable<number>;
+        [-0.25]: tamagui.Variable<number>;
+        [-0.5]: tamagui.Variable<number>;
+        [-0.75]: tamagui.Variable<number>;
+        [-1]: tamagui.Variable<number>;
+        [-1.5]: tamagui.Variable<number>;
+        [-2]: tamagui.Variable<number>;
+        [-2.5]: tamagui.Variable<number>;
+        [-3]: tamagui.Variable<number>;
+        [-3.5]: tamagui.Variable<number>;
+        [-4]: tamagui.Variable<number>;
+        "-true": tamagui.Variable<number>;
+        [-4.5]: tamagui.Variable<number>;
+        [-5]: tamagui.Variable<number>;
+        [-6]: tamagui.Variable<number>;
+        [-7]: tamagui.Variable<number>;
+        [-8]: tamagui.Variable<number>;
+        [-9]: tamagui.Variable<number>;
+        [-10]: tamagui.Variable<number>;
+        [-11]: tamagui.Variable<number>;
+        [-12]: tamagui.Variable<number>;
+        [-13]: tamagui.Variable<number>;
+        [-14]: tamagui.Variable<number>;
+        [-15]: tamagui.Variable<number>;
+        [-16]: tamagui.Variable<number>;
+        [-17]: tamagui.Variable<number>;
+        [-18]: tamagui.Variable<number>;
+        [-19]: tamagui.Variable<number>;
+        [-20]: tamagui.Variable<number>;
     };
-    /**
-     * BORDER RADIUS SCALE
-     */
+    size: {
+        $0: tamagui.Variable<number>;
+        "$0.25": tamagui.Variable<number>;
+        "$0.5": tamagui.Variable<number>;
+        "$0.75": tamagui.Variable<number>;
+        $1: tamagui.Variable<number>;
+        "$1.5": tamagui.Variable<number>;
+        $2: tamagui.Variable<number>;
+        "$2.5": tamagui.Variable<number>;
+        $3: tamagui.Variable<number>;
+        "$3.5": tamagui.Variable<number>;
+        $4: tamagui.Variable<number>;
+        $true: tamagui.Variable<number>;
+        "$4.5": tamagui.Variable<number>;
+        $5: tamagui.Variable<number>;
+        $6: tamagui.Variable<number>;
+        $7: tamagui.Variable<number>;
+        $8: tamagui.Variable<number>;
+        $9: tamagui.Variable<number>;
+        $10: tamagui.Variable<number>;
+        $11: tamagui.Variable<number>;
+        $12: tamagui.Variable<number>;
+        $13: tamagui.Variable<number>;
+        $14: tamagui.Variable<number>;
+        $15: tamagui.Variable<number>;
+        $16: tamagui.Variable<number>;
+        $17: tamagui.Variable<number>;
+        $18: tamagui.Variable<number>;
+        $19: tamagui.Variable<number>;
+        $20: tamagui.Variable<number>;
+    };
     radius: {
-        sm: number;
-        md: number;
-        lg: number;
-        pill: number;
+        0: tamagui.Variable<number>;
+        1: tamagui.Variable<number>;
+        2: tamagui.Variable<number>;
+        3: tamagui.Variable<number>;
+        4: tamagui.Variable<number>;
+        true: tamagui.Variable<number>;
+        5: tamagui.Variable<number>;
+        6: tamagui.Variable<number>;
+        7: tamagui.Variable<number>;
+        8: tamagui.Variable<number>;
+        9: tamagui.Variable<number>;
+        10: tamagui.Variable<number>;
+        11: tamagui.Variable<number>;
+        12: tamagui.Variable<number>;
     };
-    /**
-     * TYPOGRAPHY SCALE
-     * Enables accessibility scaling + consistency.
-     */
-    typography: {
+    zIndex: {
+        0: tamagui.Variable<number>;
+        1: tamagui.Variable<number>;
+        2: tamagui.Variable<number>;
+        3: tamagui.Variable<number>;
+        4: tamagui.Variable<number>;
+        5: tamagui.Variable<number>;
+    };
+} & Omit<{
+    radius: {
+        0: tamagui.Variable<number>;
+        1: tamagui.Variable<number>;
+        2: tamagui.Variable<number>;
+        3: tamagui.Variable<number>;
+        4: tamagui.Variable<number>;
+        true: tamagui.Variable<number>;
+        5: tamagui.Variable<number>;
+        6: tamagui.Variable<number>;
+        7: tamagui.Variable<number>;
+        8: tamagui.Variable<number>;
+        9: tamagui.Variable<number>;
+        10: tamagui.Variable<number>;
+        11: tamagui.Variable<number>;
+        12: tamagui.Variable<number>;
+    };
+    zIndex: {
+        0: tamagui.Variable<number>;
+        1: tamagui.Variable<number>;
+        2: tamagui.Variable<number>;
+        3: tamagui.Variable<number>;
+        4: tamagui.Variable<number>;
+        5: tamagui.Variable<number>;
+    };
+    space: {
+        0: tamagui.Variable<number>;
+        0.25: tamagui.Variable<number>;
+        0.5: tamagui.Variable<number>;
+        0.75: tamagui.Variable<number>;
+        1: tamagui.Variable<number>;
+        1.5: tamagui.Variable<number>;
+        2: tamagui.Variable<number>;
+        2.5: tamagui.Variable<number>;
+        3: tamagui.Variable<number>;
+        3.5: tamagui.Variable<number>;
+        4: tamagui.Variable<number>;
+        true: tamagui.Variable<number>;
+        4.5: tamagui.Variable<number>;
+        5: tamagui.Variable<number>;
+        6: tamagui.Variable<number>;
+        7: tamagui.Variable<number>;
+        8: tamagui.Variable<number>;
+        9: tamagui.Variable<number>;
+        10: tamagui.Variable<number>;
+        11: tamagui.Variable<number>;
+        12: tamagui.Variable<number>;
+        13: tamagui.Variable<number>;
+        14: tamagui.Variable<number>;
+        15: tamagui.Variable<number>;
+        16: tamagui.Variable<number>;
+        17: tamagui.Variable<number>;
+        18: tamagui.Variable<number>;
+        19: tamagui.Variable<number>;
+        20: tamagui.Variable<number>;
+        [-0.25]: tamagui.Variable<number>;
+        [-0.5]: tamagui.Variable<number>;
+        [-0.75]: tamagui.Variable<number>;
+        [-1]: tamagui.Variable<number>;
+        [-1.5]: tamagui.Variable<number>;
+        [-2]: tamagui.Variable<number>;
+        [-2.5]: tamagui.Variable<number>;
+        [-3]: tamagui.Variable<number>;
+        [-3.5]: tamagui.Variable<number>;
+        [-4]: tamagui.Variable<number>;
+        "-true": tamagui.Variable<number>;
+        [-4.5]: tamagui.Variable<number>;
+        [-5]: tamagui.Variable<number>;
+        [-6]: tamagui.Variable<number>;
+        [-7]: tamagui.Variable<number>;
+        [-8]: tamagui.Variable<number>;
+        [-9]: tamagui.Variable<number>;
+        [-10]: tamagui.Variable<number>;
+        [-11]: tamagui.Variable<number>;
+        [-12]: tamagui.Variable<number>;
+        [-13]: tamagui.Variable<number>;
+        [-14]: tamagui.Variable<number>;
+        [-15]: tamagui.Variable<number>;
+        [-16]: tamagui.Variable<number>;
+        [-17]: tamagui.Variable<number>;
+        [-18]: tamagui.Variable<number>;
+        [-19]: tamagui.Variable<number>;
+        [-20]: tamagui.Variable<number>;
+    };
+    size: {
+        $0: tamagui.Variable<number>;
+        "$0.25": tamagui.Variable<number>;
+        "$0.5": tamagui.Variable<number>;
+        "$0.75": tamagui.Variable<number>;
+        $1: tamagui.Variable<number>;
+        "$1.5": tamagui.Variable<number>;
+        $2: tamagui.Variable<number>;
+        "$2.5": tamagui.Variable<number>;
+        $3: tamagui.Variable<number>;
+        "$3.5": tamagui.Variable<number>;
+        $4: tamagui.Variable<number>;
+        $true: tamagui.Variable<number>;
+        "$4.5": tamagui.Variable<number>;
+        $5: tamagui.Variable<number>;
+        $6: tamagui.Variable<number>;
+        $7: tamagui.Variable<number>;
+        $8: tamagui.Variable<number>;
+        $9: tamagui.Variable<number>;
+        $10: tamagui.Variable<number>;
+        $11: tamagui.Variable<number>;
+        $12: tamagui.Variable<number>;
+        $13: tamagui.Variable<number>;
+        $14: tamagui.Variable<number>;
+        $15: tamagui.Variable<number>;
+        $16: tamagui.Variable<number>;
+        $17: tamagui.Variable<number>;
+        $18: tamagui.Variable<number>;
+        $19: tamagui.Variable<number>;
+        $20: tamagui.Variable<number>;
+    };
+    color: {
+        yellow1Dark: tamagui.Variable<string>;
+        yellow2Dark: tamagui.Variable<string>;
+        yellow3Dark: tamagui.Variable<string>;
+        yellow4Dark: tamagui.Variable<string>;
+        yellow5Dark: tamagui.Variable<string>;
+        yellow6Dark: tamagui.Variable<string>;
+        yellow7Dark: tamagui.Variable<string>;
+        yellow8Dark: tamagui.Variable<string>;
+        yellow9Dark: tamagui.Variable<string>;
+        yellow10Dark: tamagui.Variable<string>;
+        yellow11Dark: tamagui.Variable<string>;
+        yellow12Dark: tamagui.Variable<string>;
+        red1Dark: tamagui.Variable<string>;
+        red2Dark: tamagui.Variable<string>;
+        red3Dark: tamagui.Variable<string>;
+        red4Dark: tamagui.Variable<string>;
+        red5Dark: tamagui.Variable<string>;
+        red6Dark: tamagui.Variable<string>;
+        red7Dark: tamagui.Variable<string>;
+        red8Dark: tamagui.Variable<string>;
+        red9Dark: tamagui.Variable<string>;
+        red10Dark: tamagui.Variable<string>;
+        red11Dark: tamagui.Variable<string>;
+        red12Dark: tamagui.Variable<string>;
+        purple1Dark: tamagui.Variable<string>;
+        purple2Dark: tamagui.Variable<string>;
+        purple3Dark: tamagui.Variable<string>;
+        purple4Dark: tamagui.Variable<string>;
+        purple5Dark: tamagui.Variable<string>;
+        purple6Dark: tamagui.Variable<string>;
+        purple7Dark: tamagui.Variable<string>;
+        purple8Dark: tamagui.Variable<string>;
+        purple9Dark: tamagui.Variable<string>;
+        purple10Dark: tamagui.Variable<string>;
+        purple11Dark: tamagui.Variable<string>;
+        purple12Dark: tamagui.Variable<string>;
+        pink1Dark: tamagui.Variable<string>;
+        pink2Dark: tamagui.Variable<string>;
+        pink3Dark: tamagui.Variable<string>;
+        pink4Dark: tamagui.Variable<string>;
+        pink5Dark: tamagui.Variable<string>;
+        pink6Dark: tamagui.Variable<string>;
+        pink7Dark: tamagui.Variable<string>;
+        pink8Dark: tamagui.Variable<string>;
+        pink9Dark: tamagui.Variable<string>;
+        pink10Dark: tamagui.Variable<string>;
+        pink11Dark: tamagui.Variable<string>;
+        pink12Dark: tamagui.Variable<string>;
+        orange1Dark: tamagui.Variable<string>;
+        orange2Dark: tamagui.Variable<string>;
+        orange3Dark: tamagui.Variable<string>;
+        orange4Dark: tamagui.Variable<string>;
+        orange5Dark: tamagui.Variable<string>;
+        orange6Dark: tamagui.Variable<string>;
+        orange7Dark: tamagui.Variable<string>;
+        orange8Dark: tamagui.Variable<string>;
+        orange9Dark: tamagui.Variable<string>;
+        orange10Dark: tamagui.Variable<string>;
+        orange11Dark: tamagui.Variable<string>;
+        orange12Dark: tamagui.Variable<string>;
+        green1Dark: tamagui.Variable<string>;
+        green2Dark: tamagui.Variable<string>;
+        green3Dark: tamagui.Variable<string>;
+        green4Dark: tamagui.Variable<string>;
+        green5Dark: tamagui.Variable<string>;
+        green6Dark: tamagui.Variable<string>;
+        green7Dark: tamagui.Variable<string>;
+        green8Dark: tamagui.Variable<string>;
+        green9Dark: tamagui.Variable<string>;
+        green10Dark: tamagui.Variable<string>;
+        green11Dark: tamagui.Variable<string>;
+        green12Dark: tamagui.Variable<string>;
+        gray1Dark: tamagui.Variable<string>;
+        gray2Dark: tamagui.Variable<string>;
+        gray3Dark: tamagui.Variable<string>;
+        gray4Dark: tamagui.Variable<string>;
+        gray5Dark: tamagui.Variable<string>;
+        gray6Dark: tamagui.Variable<string>;
+        gray7Dark: tamagui.Variable<string>;
+        gray8Dark: tamagui.Variable<string>;
+        gray9Dark: tamagui.Variable<string>;
+        gray10Dark: tamagui.Variable<string>;
+        gray11Dark: tamagui.Variable<string>;
+        gray12Dark: tamagui.Variable<string>;
+        blue1Dark: tamagui.Variable<string>;
+        blue2Dark: tamagui.Variable<string>;
+        blue3Dark: tamagui.Variable<string>;
+        blue4Dark: tamagui.Variable<string>;
+        blue5Dark: tamagui.Variable<string>;
+        blue6Dark: tamagui.Variable<string>;
+        blue7Dark: tamagui.Variable<string>;
+        blue8Dark: tamagui.Variable<string>;
+        blue9Dark: tamagui.Variable<string>;
+        blue10Dark: tamagui.Variable<string>;
+        blue11Dark: tamagui.Variable<string>;
+        blue12Dark: tamagui.Variable<string>;
+        yellow1Light: tamagui.Variable<string>;
+        yellow2Light: tamagui.Variable<string>;
+        yellow3Light: tamagui.Variable<string>;
+        yellow4Light: tamagui.Variable<string>;
+        yellow5Light: tamagui.Variable<string>;
+        yellow6Light: tamagui.Variable<string>;
+        yellow7Light: tamagui.Variable<string>;
+        yellow8Light: tamagui.Variable<string>;
+        yellow9Light: tamagui.Variable<string>;
+        yellow10Light: tamagui.Variable<string>;
+        yellow11Light: tamagui.Variable<string>;
+        yellow12Light: tamagui.Variable<string>;
+        red1Light: tamagui.Variable<string>;
+        red2Light: tamagui.Variable<string>;
+        red3Light: tamagui.Variable<string>;
+        red4Light: tamagui.Variable<string>;
+        red5Light: tamagui.Variable<string>;
+        red6Light: tamagui.Variable<string>;
+        red7Light: tamagui.Variable<string>;
+        red8Light: tamagui.Variable<string>;
+        red9Light: tamagui.Variable<string>;
+        red10Light: tamagui.Variable<string>;
+        red11Light: tamagui.Variable<string>;
+        red12Light: tamagui.Variable<string>;
+        purple1Light: tamagui.Variable<string>;
+        purple2Light: tamagui.Variable<string>;
+        purple3Light: tamagui.Variable<string>;
+        purple4Light: tamagui.Variable<string>;
+        purple5Light: tamagui.Variable<string>;
+        purple6Light: tamagui.Variable<string>;
+        purple7Light: tamagui.Variable<string>;
+        purple8Light: tamagui.Variable<string>;
+        purple9Light: tamagui.Variable<string>;
+        purple10Light: tamagui.Variable<string>;
+        purple11Light: tamagui.Variable<string>;
+        purple12Light: tamagui.Variable<string>;
+        pink1Light: tamagui.Variable<string>;
+        pink2Light: tamagui.Variable<string>;
+        pink3Light: tamagui.Variable<string>;
+        pink4Light: tamagui.Variable<string>;
+        pink5Light: tamagui.Variable<string>;
+        pink6Light: tamagui.Variable<string>;
+        pink7Light: tamagui.Variable<string>;
+        pink8Light: tamagui.Variable<string>;
+        pink9Light: tamagui.Variable<string>;
+        pink10Light: tamagui.Variable<string>;
+        pink11Light: tamagui.Variable<string>;
+        pink12Light: tamagui.Variable<string>;
+        orange1Light: tamagui.Variable<string>;
+        orange2Light: tamagui.Variable<string>;
+        orange3Light: tamagui.Variable<string>;
+        orange4Light: tamagui.Variable<string>;
+        orange5Light: tamagui.Variable<string>;
+        orange6Light: tamagui.Variable<string>;
+        orange7Light: tamagui.Variable<string>;
+        orange8Light: tamagui.Variable<string>;
+        orange9Light: tamagui.Variable<string>;
+        orange10Light: tamagui.Variable<string>;
+        orange11Light: tamagui.Variable<string>;
+        orange12Light: tamagui.Variable<string>;
+        green1Light: tamagui.Variable<string>;
+        green2Light: tamagui.Variable<string>;
+        green3Light: tamagui.Variable<string>;
+        green4Light: tamagui.Variable<string>;
+        green5Light: tamagui.Variable<string>;
+        green6Light: tamagui.Variable<string>;
+        green7Light: tamagui.Variable<string>;
+        green8Light: tamagui.Variable<string>;
+        green9Light: tamagui.Variable<string>;
+        green10Light: tamagui.Variable<string>;
+        green11Light: tamagui.Variable<string>;
+        green12Light: tamagui.Variable<string>;
+        gray1Light: tamagui.Variable<string>;
+        gray2Light: tamagui.Variable<string>;
+        gray3Light: tamagui.Variable<string>;
+        gray4Light: tamagui.Variable<string>;
+        gray5Light: tamagui.Variable<string>;
+        gray6Light: tamagui.Variable<string>;
+        gray7Light: tamagui.Variable<string>;
+        gray8Light: tamagui.Variable<string>;
+        gray9Light: tamagui.Variable<string>;
+        gray10Light: tamagui.Variable<string>;
+        gray11Light: tamagui.Variable<string>;
+        gray12Light: tamagui.Variable<string>;
+        blue1Light: tamagui.Variable<string>;
+        blue2Light: tamagui.Variable<string>;
+        blue3Light: tamagui.Variable<string>;
+        blue4Light: tamagui.Variable<string>;
+        blue5Light: tamagui.Variable<string>;
+        blue6Light: tamagui.Variable<string>;
+        blue7Light: tamagui.Variable<string>;
+        blue8Light: tamagui.Variable<string>;
+        blue9Light: tamagui.Variable<string>;
+        blue10Light: tamagui.Variable<string>;
+        blue11Light: tamagui.Variable<string>;
+        blue12Light: tamagui.Variable<string>;
+        white0: tamagui.Variable<string>;
+        white075: tamagui.Variable<string>;
+        white05: tamagui.Variable<string>;
+        white025: tamagui.Variable<string>;
+        black0: tamagui.Variable<string>;
+        black075: tamagui.Variable<string>;
+        black05: tamagui.Variable<string>;
+        black025: tamagui.Variable<string>;
+        white1: tamagui.Variable<string>;
+        white2: tamagui.Variable<string>;
+        white3: tamagui.Variable<string>;
+        white4: tamagui.Variable<string>;
+        white5: tamagui.Variable<string>;
+        white6: tamagui.Variable<string>;
+        white7: tamagui.Variable<string>;
+        white8: tamagui.Variable<string>;
+        white9: tamagui.Variable<string>;
+        white10: tamagui.Variable<string>;
+        white11: tamagui.Variable<string>;
+        white12: tamagui.Variable<string>;
+        black1: tamagui.Variable<string>;
+        black2: tamagui.Variable<string>;
+        black3: tamagui.Variable<string>;
+        black4: tamagui.Variable<string>;
+        black5: tamagui.Variable<string>;
+        black6: tamagui.Variable<string>;
+        black7: tamagui.Variable<string>;
+        black8: tamagui.Variable<string>;
+        black9: tamagui.Variable<string>;
+        black10: tamagui.Variable<string>;
+        black11: tamagui.Variable<string>;
+        black12: tamagui.Variable<string>;
+    };
+}, "color" | "zIndex" | "size" | "space" | "radius">, _tamagui_themes_v3_themes.ThemesOut, {
+    readonly ussel: "userSelect";
+    readonly cur: "cursor";
+    readonly pe: "pointerEvents";
+    readonly col: "color";
+    readonly ff: "fontFamily";
+    readonly fos: "fontSize";
+    readonly fost: "fontStyle";
+    readonly fow: "fontWeight";
+    readonly ls: "letterSpacing";
+    readonly lh: "lineHeight";
+    readonly ta: "textAlign";
+    readonly tt: "textTransform";
+    readonly ww: "wordWrap";
+    readonly ac: "alignContent";
+    readonly ai: "alignItems";
+    readonly als: "alignSelf";
+    readonly b: "bottom";
+    readonly bg: "backgroundColor";
+    readonly bbc: "borderBottomColor";
+    readonly bblr: "borderBottomLeftRadius";
+    readonly bbrr: "borderBottomRightRadius";
+    readonly bbw: "borderBottomWidth";
+    readonly blc: "borderLeftColor";
+    readonly blw: "borderLeftWidth";
+    readonly bc: "borderColor";
+    readonly br: "borderRadius";
+    readonly bs: "borderStyle";
+    readonly brw: "borderRightWidth";
+    readonly brc: "borderRightColor";
+    readonly btc: "borderTopColor";
+    readonly btlr: "borderTopLeftRadius";
+    readonly btrr: "borderTopRightRadius";
+    readonly btw: "borderTopWidth";
+    readonly bw: "borderWidth";
+    readonly dsp: "display";
+    readonly f: "flex";
+    readonly fb: "flexBasis";
+    readonly fd: "flexDirection";
+    readonly fg: "flexGrow";
+    readonly fs: "flexShrink";
+    readonly fw: "flexWrap";
+    readonly h: "height";
+    readonly jc: "justifyContent";
+    readonly l: "left";
+    readonly m: "margin";
+    readonly mah: "maxHeight";
+    readonly maw: "maxWidth";
+    readonly mb: "marginBottom";
+    readonly mih: "minHeight";
+    readonly miw: "minWidth";
+    readonly ml: "marginLeft";
+    readonly mr: "marginRight";
+    readonly mt: "marginTop";
+    readonly mx: "marginHorizontal";
+    readonly my: "marginVertical";
+    readonly o: "opacity";
+    readonly ov: "overflow";
+    readonly p: "padding";
+    readonly pb: "paddingBottom";
+    readonly pl: "paddingLeft";
+    readonly pos: "position";
+    readonly pr: "paddingRight";
+    readonly pt: "paddingTop";
+    readonly px: "paddingHorizontal";
+    readonly py: "paddingVertical";
+    readonly r: "right";
+    readonly shac: "shadowColor";
+    readonly shar: "shadowRadius";
+    readonly shof: "shadowOffset";
+    readonly shop: "shadowOpacity";
+    readonly t: "top";
+    readonly w: "width";
+    readonly zi: "zIndex";
+}, {
+    xl: {
+        maxWidth: number;
+    };
+    lg: {
+        maxWidth: number;
+    };
+    md: {
+        maxWidth: number;
+    };
+    sm: {
+        maxWidth: number;
+    };
+    xs: {
+        maxWidth: number;
+    };
+    xxs: {
+        maxWidth: number;
+    };
+    gtXs: {
+        minWidth: number;
+    };
+    gtSm: {
+        minWidth: number;
+    };
+    gtMd: {
+        minWidth: number;
+    };
+    gtLg: {
+        minWidth: number;
+    };
+    gtXl: {
+        minWidth: number;
+    };
+}, {
+    '0ms': string;
+    '30ms': string;
+    '50ms': string;
+    '75ms': string;
+    '100ms': string;
+    '200ms': string;
+    '250ms': string;
+    '300ms': string;
+    '400ms': string;
+    '500ms': string;
+    superBouncy: string;
+    bouncy: string;
+    kindaBouncy: string;
+    superLazy: string;
+    lazy: string;
+    medium: string;
+    slowest: string;
+    slow: string;
+    quick: string;
+    quickLessBouncy: string;
+    tooltip: string;
+    quicker: string;
+    quickerLessBouncy: string;
+    quickest: string;
+    quickestLessBouncy: string;
+}, {
+    heading: _tamagui_web.FillInFont<{
         size: {
-            xs: number;
-            sm: number;
-            md: number;
-            lg: number;
-            xl: number;
-            xxl: number;
+            5: number;
+            6: number;
+            9: number;
+            10: number;
+        };
+        transform: {
+            6: "uppercase";
+            7: "none";
         };
         weight: {
-            regular: "400";
-            medium: "500";
-            semibold: "600";
-            bold: "700";
+            6: string;
+            7: string;
         };
-        lineHeight: {
-            tight: number;
-            normal: number;
-            relaxed: number;
+        color: {
+            6: string;
+            7: string;
         };
-    };
-    /**
-     * BREAKPOINTS (used by shared responsive hook)
-     * React Native does NOT support media queries,
-     * so we control responsiveness manually using these.
-     */
-    breakpoints: {
-        phone: number;
-        tablet: number;
-        laptop: number;
-        desktop: number;
-    };
-    /**
-     * ACCESSIBILITY TOKENS
-     * Enforces WCAG + Apple + Google guidelines.
-     */
-    accessibility: {
-        minTouchSize: number;
-        focusOutlineWidth: number;
-    };
-    /**
-     * SHADOWS (web + native compatible values)
-     */
-    shadow: {
-        sm: {
-            elevation: number;
-            shadowColor: string;
-            shadowOpacity: number;
-            shadowRadius: number;
-            shadowOffset: {
-                width: number;
-                height: number;
+        letterSpacing: {
+            5: number;
+            6: number;
+            7: number;
+            8: number;
+            9: number;
+            10: number;
+            12: number;
+            14: number;
+            15: number;
+        };
+        face: {
+            700: {
+                normal: string;
+            };
+            800: {
+                normal: string;
+            };
+            900: {
+                normal: string;
             };
         };
-        md: {
-            elevation: number;
-            shadowColor: string;
-            shadowOpacity: number;
-            shadowRadius: number;
-            shadowOffset: {
-                width: number;
-                height: number;
-            };
+    }, 9 | 15 | 1 | 10 | 3 | 2 | 5 | 6 | 16 | 11 | 12 | 14 | 4 | 7 | 8 | 13 | "true">;
+    body: _tamagui_web.FillInFont<tamagui.GenericFont, 9 | 15 | 1 | 10 | 3 | 2 | 5 | 6 | 16 | 11 | 12 | 14 | 4 | 7 | 8 | 13 | "true">;
+    mono: {
+        weight: {
+            1: string;
+        };
+        size: {
+            1: number;
+            2: number;
+            3: number;
+            4: number;
+            5: number;
+            6: number;
+            7: number;
+            8: number;
+            9: number;
+            10: number;
+            11: number;
+            12: number;
+            13: number;
+            14: number;
+            15: number;
+            16: number;
         };
     };
-};
-/**
- * Optional: export type-safe theme for autocompletion
- */
-type Theme = typeof theme;
+    silkscreen: _tamagui_web.FillInFont<tamagui.GenericFont, 9 | 15 | 1 | 10 | 3 | 2 | 5 | 6 | 16 | 11 | 12 | 14 | 4 | 7 | 8 | 13>;
+}, {
+    mediaQueryDefaultActive: {
+        xl: boolean;
+        lg: boolean;
+        md: boolean;
+        sm: boolean;
+        xs: boolean;
+        xxs: boolean;
+    };
+    defaultFont: string;
+    fastSchemeChange: true;
+    shouldAddPrefersColorThemes: true;
+}>;
+type AppConfig = typeof tamaguiConfig;
+declare module 'tamagui' {
+    interface TamaguiCustomConfig extends AppConfig {
+    }
+}
 
-export { Accordion, type AccordionProps, Button, type ButtonProps, TextField, type TextFieldProps, type Theme, theme };
+type ThemeName = keyof typeof tamaguiConfig.themes;
+type AppProviderProps = {
+    children: React$1.ReactNode;
+    defaultTheme?: ThemeName;
+};
+declare const AppProvider: ({ children, defaultTheme, }: AppProviderProps) => react_jsx_runtime.JSX.Element;
+
+type Props$1 = {
+    title: string;
+    onPress?: () => void;
+    full?: boolean;
+};
+declare const Button: ({ title, onPress, full }: Props$1) => react_jsx_runtime.JSX.Element;
+
+type Props = {
+    label?: string;
+    value: string;
+    onChangeText: (text: string) => void;
+};
+declare const TextField: ({ label, value, onChangeText }: Props) => react_jsx_runtime.JSX.Element;
+
+declare const Card: ({ children }: {
+    children: React.ReactNode;
+}) => react_jsx_runtime.JSX.Element;
+
+export { AppProvider, Button, Card, TextField };

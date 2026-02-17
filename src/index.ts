@@ -1,7 +1,5 @@
-/* ------------------ Components ------------------ */
-export * from "./components/Button";
-export * from "./components/TextField";
-export * from "./components/Accordion";
+export * from './provider/AppProvider'
 
-/* ------------------ Theme ------------------ */
-export * from "./theme/theme";
+export * from './components/Button/Button'
+export * from './components/TextField/TextField'
+export * from './components/Card/Card'
