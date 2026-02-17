@@ -19,8 +19,7 @@
 
   "scripts": {
     "build": "tsup",
-    "clean": "rimraf dist",
-    "prepare": "npm run build"
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "react": ">=18",
