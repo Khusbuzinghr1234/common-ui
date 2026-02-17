@@ -1,9 +1,29 @@
 {
   "compilerOptions": {
+    /* React JSX */
     "jsx": "react-jsx",
+
+    /* Tell TS we support RN + Web */
     "types": ["react", "react-native"],
-    "skipLibCheck": true,
-    "esModuleInterop": true
+
+    /* IMPORTANT: Enables platform file resolution */
+    "moduleResolution": "bundler",
+    "moduleSuffixes": [".native", ".web", ""],
+
+    /* Build settings for library */
+    "target": "ES2019",
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "dist",
+
+    /* Interop */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Quality */
+    "strict": true,
+    "skipLibCheck": true
   },
+
   "include": ["src"]
 }
