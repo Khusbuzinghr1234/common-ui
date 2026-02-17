@@ -2,7 +2,7 @@ import { Pressable, Text, StyleSheet } from "react-native";
 import { ButtonProps } from "./Button.types";
 import { theme } from "../../theme/theme";
 
-export const Button = ({ title, onPress, disabled }: ButtonProps) => (
+export const Button = ({ children, onPress, disabled }: ButtonProps) => (
   <Pressable
     accessibilityRole="button"
     accessibilityState={{ disabled }}
@@ -14,7 +14,7 @@ export const Button = ({ title, onPress, disabled }: ButtonProps) => (
       disabled && styles.disabled,
     ]}
   >
-    <Text style={styles.text}>{title}</Text>
+    <Text style={styles.text}>{children}</Text>
   </Pressable>
 );
 

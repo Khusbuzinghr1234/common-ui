@@ -1,7 +1,7 @@
 import { ButtonProps } from "./Button.types";
 import { theme } from "../../theme/theme";
 
-export const Button = ({ title, onPress, disabled }: ButtonProps) => (
+export const Button = ({ children, onPress, disabled }: ButtonProps) => (
   <button
     onClick={onPress}
     disabled={disabled}
@@ -16,6 +16,6 @@ export const Button = ({ title, onPress, disabled }: ButtonProps) => (
       cursor: disabled ? "not-allowed" : "pointer",
     }}
   >
-    {title}
+    {children}
   </button>
 );

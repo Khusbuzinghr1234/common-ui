@@ -1,12 +1,13 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
+import { ReactNode } from 'react';
 
-type ButtonProps = {
-    title: string;
-    onPress?: () => void;
+interface ButtonProps {
+    children: ReactNode;
+    onPress: () => void;
     disabled?: boolean;
-};
+}
 
-declare const Button: ({ title, onPress, disabled }: ButtonProps) => react_jsx_runtime.JSX.Element;
+declare const Button: ({ children, onPress, disabled }: ButtonProps) => react_jsx_runtime.JSX.Element;
 
 type TextFieldProps = {
     label?: string;

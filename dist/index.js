@@ -139,7 +139,7 @@ var theme = {
 
 // src/components/Button/Button.web.tsx
 var import_jsx_runtime = require("react/jsx-runtime");
-var Button = ({ title, onPress, disabled }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+var Button = ({ children, onPress, disabled }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
   "button",
   {
     onClick: onPress,
@@ -154,7 +154,7 @@ var Button = ({ title, onPress, disabled }) => /* @__PURE__ */ (0, import_jsx_ru
       border: "none",
       cursor: disabled ? "not-allowed" : "pointer"
     },
-    children: title
+    children
   }
 );
 
